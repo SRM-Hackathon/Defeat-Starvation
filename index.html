@@ -19,28 +19,48 @@
 
 <body>
     <div class="container">
-        <h1>Defeat Starvation</h1>
-        <div class="form-inline" style="padding:10px;">
-            <div class="form-group">
-                <label for="inputMobile">Mobile</label>
-                <input type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile" />
-            </div>
-            <div class="form-group">
-                <label for="inputName">Name</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Full Name" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-success" id="submit" value="Search" />
-            </div>
-            <div class="pull-right">
-                <a href="file:///C:/Users/jarvisPC/Desktop/hackethon/addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
+        <div class="row">
+            <h1>Defeat Starvation</h1>
+            <div class="form-inline" style="margins:10px;">
+                <div class="form-group">
+                    <label for="inputMobile">Mobile</label>
+                    <input type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile" />
+                </div>
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Full Name" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-success" id="submit" value="Search" />
+                </div>
+                <div class="pull-right">
+                    <a href="file:///C:/Users/jarvisPC/Desktop/hackethon/addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
+                </div>
             </div>
         </div>
-        <a href=""><button class="btn btn-primary">List Product</button></a>
-        <a href=""><button class="btn btn-primary">List Vendor</button></a>
-        </div>        
+        <div class="row" style="margin:10px;">
+            <a href="pricelist.html"><button class="btn btn-primary">Price List</button></a>
+            <a href="listvendor.html"><button class="btn btn-primary">List Vendor</button></a>
+            <a href="sellproduct.html"><button class="btn btn-warning pull-right">Sell Product</button></a>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="totalstock.html"><div class="well">
+                    <p>Total stock<span></span></p>
+                </div></a>
+            </div>
+            <div class="col-md-4">
+                <a href=""><div class="well">
+                    <p>Message<span></span></p>
+                </div></a>
+            </div>
+            <div class="col-md-4">
+                <a href=""><div class="well">
+                    <p>Request Product<span></span></p>
+                </div></a>
+            </div>
+        </div>
     </div>
-
 </body>
 
 </html>
