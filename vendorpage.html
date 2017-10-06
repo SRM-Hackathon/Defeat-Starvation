@@ -15,31 +15,25 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <h1>Defeat Starvation</h1>
-            <form class="form-inline" method="post">
+            <div class="form-inline">
                 <div class="form-group">
-                    <label for="mobno">Mobile</label>
-                    <input autocomplete="off" name="mobno" type="tel" maxlength="10" class="form-control" id="mobno" placeholder="Mobile" />
-                     <div id="clist"></div>
+                    <label for="inputMobile">Mobile</label>
+                    <input type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile" disabled />
                 </div>
                 <div class="form-group">
-                    <label for="name">Name</label>
-                    <input autocomplete="off" name="name" type="text" class="form-control" id="name" placeholder="Full Name" />
-                    <div id="list"></div>
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" id="submit" value="Search" />
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" id="inputName" placeholder="Full Name" disabled />
                 </div>
                 <div class="pull-right">
-                    <a href="addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
+                    <a href="file:///C:/Users/jarvisPC/Desktop/hackethon/addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
                 </div>
-            </form>
+            </div>
         </div>
         <div class="row" style="margin:10px;">
             <a href="pricelist.html"><button class="btn btn-primary">Price List</button></a>
@@ -67,28 +61,3 @@
 </body>
 
 </html>
-
-<script>
-        $(document).ready(function(){
-            $('#mobno').keyup(function(){
-                var query = $(this).val();
-                if (query!='')
-                {
-                    $.ajax({
-                        url:"search.php",
-                        method:"POST",
-                        data:{query:query},
-                        success:function(data)
-                        {
-                            $('#list').fadeIn();
-                            $('#list').html(data);
-                        }   
-                    });
-                }
-            });
-            $(document).on('click','li',function(){
-                $('#list').val($(this).text());
-                $('#list').fadeOut();
-             });
-        });
-    </script>

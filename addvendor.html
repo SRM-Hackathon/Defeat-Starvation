@@ -15,23 +15,23 @@
 <body>
     <div class="container">
         <h1>Add Vendore</h1>
-        <div class="form">
+        <form class="form" method="post" action="addvendor.php">
             <div class="form-group">
                 <label for="inputName">Name</label>
-                <input type="text" class="form-control" id="inputName" placeholder="Full Name" />
+                <input name="name" type="text" class="form-control" id="inputName" placeholder="Full Name" />
             </div>
             <div class="form-group">
                 <label for="inputMobile">Mobile</label>
-                <input type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile No." />
+                <input name="mobno" type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile No." />
             </div>
             <div class="form-group">
                 <label for="inputEmail">Email(optional)</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Email" />
+                <input name="email" type="email" class="form-control" id="inputEmail" placeholder="Email" />
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-success" id="submit" value="Register"/>
+                <input name="add_vendor" type="submit" class="btn btn-success" id="submit" value="Register"/>
             </div>
-        </div>
+        </form>
     </div>
 </body>
 </html>
