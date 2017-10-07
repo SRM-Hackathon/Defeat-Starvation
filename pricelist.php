@@ -10,7 +10,7 @@ $connect = mysqli_connect("localhost","root","","defeatstarvation2");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Vendor</title>
+    <title>Price List</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -27,8 +27,12 @@ $connect = mysqli_connect("localhost","root","","defeatstarvation2");
 
 <body>
     <div class="container">
-        <h1>Defeat Starvation</h1>
-        <div class="table">
+        <h1>Price list</h1>
+        <div class="row">
+            <a href="index.html"><button class="btn btn-primary">Home</button></a>
+            <a href="vendorpage.html"><button class="btn btn-primary">Vendor Page</button></a>
+        </div>
+        <div class="row">
             <table class="table table-stripped table-border">
                 <thead>
                     <th>Product</th>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Vendor</title>
+    <title>Vendor Page</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -20,8 +20,8 @@
 <body>
     <div class="container">
         <div class="row">
-            <h1>Defeat Starvation</h1>
-            <div class="form-inline">
+            <h1>Fod Center</h1>
+            <form class="form-inline" action="index.html" method="post">
                 <div class="form-group">
                     <label for="inputMobile">Mobile</label>
                     <input type="tel" maxlength="10" class="form-control" id="inputName" placeholder="Mobile" disabled />
@@ -30,32 +30,26 @@
                     <label for="inputName">Name</label>
                     <input type="text" class="form-control" id="inputName" placeholder="Full Name" disabled />
                 </div>
-                <div class="pull-right">
-                    <a href="file:///C:/Users/jarvisPC/Desktop/hackethon/addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-warning">Home</button>
                 </div>
-            </div>
+            </form>
         </div>
         <div class="row" style="margin:10px;">
-            <a href="pricelist.html"><button class="btn btn-primary">Price List</button></a>
-            <a href="listvendor.html"><button class="btn btn-primary">List Vendor</button></a>
+            <a href="pricelist.php"><button class="btn btn-primary">Price List</button></a>
             <a href="sellproduct.html"><button class="btn btn-warning pull-right">Sell Product</button></a>
+            <a href="addproduct.html"><button  style="margin-right:10px;" class="btn btn-warning pull-right">Add Product</button></a>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <a href="totalstock.html"><div class="well">
-                    <p>Total stock<span></span></p>
-                </div></a>
-            </div>
-            <div class="col-md-4">
-                <a href=""><div class="well">
-                    <p>Message<span></span></p>
-                </div></a>
-            </div>
-            <div class="col-md-4">
-                <a href=""><div class="well">
-                    <p>Request Product<span></span></p>
-                </div></a>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+            </table>
         </div>
     </div>
 </body>
