@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Vendor</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+</head>
+
+<body>
+    <div class="container">
+        <h1>Price list</h1>
+        <div class="row">
+            <a href="index.html"><button class="btn btn-primary">Home</button></a>
+        </div>
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th>Product</th>
+                    <th>Rate</th>
+                </tr>
+                </thead>
+            <tbody>
+                <tr>
+                <td> <div id="live_data"></div></td>
+            </tr>
+            </tbody>
+            </table>
+            <a href="editprice.html">
+                <button class="btn btn-success">Edit</button>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>  
+ $(document).ready(function(){  
+      function fetch_data()  
+      {  
+           $.ajax({  
+                url:"select.php",  
+                method:"POST",  
+                success:function(data){  
+                     $('#live_data').html(data);  
+                }  
+           });  
+      }  
+      fetch_data();  
+      $(document).on('click', '#btn_add', function(){  
+           var product = $('#product').text();  
+           var rate = $('#rate').text();  
+           if(product == '')  
+           {  
+                alert("Enter product Name");  
+                return false;  
+           }  
+           if(rate == '')  
+           {  
+                alert("Enter rate");  
+                return false;  
+           }  
+           $.ajax({  
+                url:"insert.php",  
+                method:"POST",  
+                data:{product:product, rate:rate},  
+                dataType:"text",  
+                success:function(data)  
+                {  
+                     alert(data);  
+                     fetch_data();  
+                }  
+           })  
+      });  
+      function edit_data(id, text, column_name)  
+      {  
+           $.ajax({  
+                url:"edit.php",  
+                method:"POST",  
+                data:{id:id, text:text, column_name:column_name},  
+                dataType:"text",  
+                success:function(data){  
+                     alert(data);  
+                }  
+           });  
+      }  
+      $(document).on('blur', '.product', function(){  
+           var id = $(this).data("id1");  
+           var product = $(this).text();  
+           edit_data(id, product, "product");  
+      });  
+      $(document).on('change', '.rate', function(){  
+           var id = $(this).data("id2");  
+           var rate = $(this).text();  
+           edit_data(id,rate, "rate");  
+      });  
+      $(document).on('click', '.btn_delete', function(){  
+           var id=$(this).data("id3");  
+           if(confirm("Are you sure you want to delete this?"))  
+           {  
+                $.ajax({  
+                     url:"delete.php",  
+                     method:"POST",  
+                     data:{id:id},  
+                     dataType:"text",  
+                     success:function(data){  
+                          alert(data);  
+                          fetch_data();  
+                     }  
+                });  
+           }  
+      });  
+ });  
+ </script>

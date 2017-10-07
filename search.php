@@ -1,5 +1,5 @@
 <?php
-    $connect = mysqli_connect("localhost","root","","defeatstarvation");
+    $connect = mysqli_connect("localhost","root","","defeatstarvation2");
     if(isset($_POST["query"]))
     {
         $output = '';

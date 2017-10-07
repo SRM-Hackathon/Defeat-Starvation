@@ -27,28 +27,29 @@
                     <label for="mobno">Mobile</label>
                     <input autocomplete="off" name="mobno" type="tel" maxlength="10" class="form-control" id="mobno" placeholder="Mobile" />
                      <div id="clist"></div>
-                </div>
-                <div class="form-group">
+               </div>
+                <div class="form-group"> 
                     <label for="name">Name</label>
-                    <input autocomplete="off" name="name" type="text" class="form-control" id="name" placeholder="Full Name" />
+                    <input disabled autocomplete="off" name="name" type="text" class="form-control" id="name" placeholder="Full Name" />
                     <div id="list"></div>
                 </div>
-                <div class="form-group">
+            <!--    <div class="form-group">
                     <input type="submit" class="btn btn-success" id="submit" value="Search" />
-                </div>
+                </div> -->
+            </form>    
                 <div class="pull-right">
                     <a href="addvendor.html"><button class="btn btn-warning">Add Vendor</button></a>
                 </div>
-            </form>
+            
         </div>
         <div class="row" style="margin:10px;">
-            <a href="pricelist.html"><button class="btn btn-primary">Price List</button></a>
-            <a href="listvendor.html"><button class="btn btn-primary">List Vendor</button></a>
+            <a href="pricelist.php"><button class="btn btn-primary">Price List</button></a>
+            <a href="listvendor.php"><button class="btn btn-primary">List Vendor</button></a>
             <a href="sellproduct.html"><button class="btn btn-warning pull-right">Sell Product</button></a>
         </div>
         <div class="row">
             <div class="col-md-4">
-                <a href="totalstock.html"><div class="well">
+                <a href="totalstock.php"><div class="well">
                     <p>Total stock<span></span></p>
                 </div></a>
             </div>
@@ -86,9 +87,14 @@
                     });
                 }
             });
+          
+
             $(document).on('click','li',function(){
-                $('#list').val($(this).text());
+                $('#name').val($(this).text());
                 $('#list').fadeOut();
              });
+
+           
+
         });
     </script>

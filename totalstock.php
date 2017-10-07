@@ -1,3 +1,8 @@
+<?php
+ $connect = mysqli_connect("localhost","root","","defeatstarvation");
+ $query = "SELECT * FROM total_stock";
+ $result = mysqli_query($connect,$query)
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,27 +20,35 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></script>
+        <script src="http://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+         <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>List Vendor</h1>
+        <h1>Defeat Starvation</h1>
         <div class="table">
-            <table class="table">
+            <table class="table table-stripped table-border" id="product">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Mobile No.</th>
-                        <th>Report</th>
-                    </tr>
-            </thead>
-            <tbody>
-                <td>1</td>
-                <td>Ram</td>
-                <td>8989889896</td>
-                <td><a href="getreport.html">Get Report</a></td>
-            </tbody>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Rate</th>
+            
+                </thead>
+            <?php
+                while($row = mysqli_fetch_array($result))
+                {
+                    echo '
+                        <tr>
+                            <td>'.$row["product"].'</td>
+                            <td>'.$row["quantity"].'</td>
+                            <td>'.$row["rate"].'</td>
+                        </tr>
+                    
+                    ';
+                }
+            ?>
             </table>
         </div>
     </div>

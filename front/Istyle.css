@@ -1,0 +1,31 @@
+nav.navbar.navbar-inverse{
+	margin: 0px;
+}
+
+
+<style>
+	div 
+	{
+    	border: 0px solid black;
+    	padding: 0px;
+    	width: 200px;
+    	height: 200px;
+    	text-align: center;
+    }
+    </div>
+
+.imagewrapper
+	{
+        float:left;
+        width:220px;
+        height:100px;
+        margin:0px 5px 5px;
+    }
+
+    h2
+    {
+        position:absolute;
+    }
+
+</style>
+

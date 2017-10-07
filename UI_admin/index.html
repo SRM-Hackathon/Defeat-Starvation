@@ -15,30 +15,37 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <h1>Request Product</h1>
-        <a href="index.html"><button class="btn btn-primary">Home</button></a>
-        <div class="form">
-            <div class="form-group">
-                <label for="inputVendor">Vendor Mobile no.</label>
-                <input type="tel" max="10" class="form-control" id="inputMobile" placeholder="Mobile No." />
+        <div class="row">
+            <h1>Admin</h1>
+        </div>
+        <div class="row" style="margin:10px;">
+            <a href="pricelist.html"><button class="btn btn-primary">Price List</button></a>
+            <a href="listvendor.html"><button class="btn btn-primary">List Vendor</button></a>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <a href="totalstock.php"><div class="well">
+                    <p>Total stock<span></span></p>
+                </div></a>
             </div>
-            <div class="form-group">
-                <label for="inputProduct">Product</label>
-                <input type="text" class="form-control" id="inputProduct" placeholder="Product Name" />
+            <div class="col-md-4">
+                <a href=""><div class="well">
+                    <p>Message<span></span></p>
+                </div></a>
             </div>
-            <div class="form-group">
-                <label for="inputQuantity">Quantity</label>
-                <input type="number" class="form-control" id="inputQuantity" placeholder="Quantity" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-success" id="submit" value="Request" />
+            <div class="col-md-4">
+                <a href=""><div class="well">
+                    <p>Request Product<span></span></p>
+                </div></a>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
